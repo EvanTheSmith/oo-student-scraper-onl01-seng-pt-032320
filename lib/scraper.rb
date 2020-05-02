@@ -32,8 +32,8 @@ class Scraper
           github = soc_check
         else
           blog = soc_check
-        end # if twitter/linked/github
-    end # socials
+        end
+    end
 
     profile_quote = doc.css(".profile-quote").text
     bio = doc.css(".description-holder p").text
@@ -46,9 +46,8 @@ class Scraper
         :profile_quote => profile_quote,
         :bio => bio
       }
-
-    my_hash = my_hash.delete_if { |k, v| v.nil? }
-  end # def
+    my_hash = my_hash.delete_if {|k, v| v.nil?}
+  end
 
 end
 
